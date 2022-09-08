@@ -33,7 +33,7 @@ export class AwsCdkPipelineStack extends cdk.Stack {
       env: { account: '064669052383', region: 'us-east-1' },
     }));
 
-    const pipeline1 = new CodePipeline(this, 'Pipeline', {
+    const pipeline1 = new CodePipeline(this, 'Pipeline1', {
       pipelineName: 'Testpipeline1',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.connection('Vlect/aws-cdk-pipeline', 'master', {
