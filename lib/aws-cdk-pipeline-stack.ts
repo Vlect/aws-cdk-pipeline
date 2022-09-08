@@ -13,7 +13,7 @@ export class AwsCdkPipelineStack extends cdk.Stack {
     super(scope, id, props);
 
     const pipeline = new CodePipeline(this, 'Pipeline', {
-      pipelineName: 'Testpipeline1',
+      pipelineName: 'Testpipeline',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('Vlect/aws-cdk-pipeline', 'main'),
         commands: ['npm ci',
