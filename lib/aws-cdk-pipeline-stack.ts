@@ -46,13 +46,13 @@ export class AwsCdkPipelineStack extends cdk.Stack {
       })
     });
 
-    const testingStage1 = pipeline1.addStage(new MyPipelineAppStage(this, "test", {
+    const testingStage1 = pipeline1.addStage(new MyPipelineAppStage(this, "test1", {
       env: { account: '064669052383', region: 'us-east-1' },
     }));
 
     testingStage1.addPost(new ManualApprovalStep('Manual approval before production'));
 
-    const prodStage1 = pipeline1.addStage(new MyPipelineAppStage(this, 'prod', {
+    const prodStage1 = pipeline1.addStage(new MyPipelineAppStage(this, 'prod1', {
       env: { account: '064669052383', region: 'us-east-1' },
     }));
   }
