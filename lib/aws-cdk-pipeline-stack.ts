@@ -36,7 +36,7 @@ export class AwsCdkPipelineStack extends cdk.Stack {
     const pipeline1 = new CodePipeline(this, 'Pipeline1', {
       pipelineName: 'Testpipeline1',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.connection('Vlect/aws-cdk-pipeline', 'master', {
+        input: CodePipelineSource.connection('juanfernandezzemoga/aws-cdk-pipeline', 'master', {
           connectionArn: "arn:aws:codestar-connections:us-east-1:064669052383:connection/e7b07f1f-2237-4670-a8eb-aeeff638d610",
           triggerOnPush: true,
         }),
