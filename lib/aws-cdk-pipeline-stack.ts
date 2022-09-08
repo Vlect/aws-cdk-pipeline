@@ -15,10 +15,7 @@ export class AwsCdkPipelineStack extends cdk.Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'Testpipeline',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.connection('Vlect/aws-cdk-pipeline', 'main', {
-          connectionArn: "",
-          triggerOnPush: true,
-        }),
+        input: CodePipelineSource.gitHub('Vlect/aws-cdk-pipeline', 'main'),
         commands: ['npm ci',
                    'npm run build',
                    'npx cdk synth']
